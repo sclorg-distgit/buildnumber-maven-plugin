@@ -4,7 +4,7 @@
 
 Name:           %{?scl_prefix}%{pkg_name}
 Version:        1.2
-Release:        7.12%{?dist}
+Release:        7.13%{?dist}
 Summary:        Build Number Maven Plugin
 
 License:        MIT and ASL 2.0
@@ -21,7 +21,7 @@ BuildArch: 	noarch
 BuildRequires: %{?scl_prefix_java_common}javapackages-tools
 
 # Maven and its dependencies
-BuildRequires: %{?scl_prefix_java_common}maven-local
+BuildRequires: %{?scl_prefix}maven-local
 BuildRequires: %{?scl_prefix}maven-plugin-plugin
 BuildRequires: %{?scl_prefix}maven-resources-plugin
 BuildRequires: %{?scl_prefix}maven-compiler-plugin
@@ -100,6 +100,9 @@ set -e -x
 %doc LICENSE.txt LICENSE-2.0.txt
 
 %changelog
+* Mon Feb 08 2016 Michal Srb <msrb@redhat.com> - 1.2-7.13
+- Fix BR on maven-local & co.
+
 * Mon Jan 11 2016 Michal Srb <msrb@redhat.com> - 1.2-7.12
 - maven33 rebuild #2
 
